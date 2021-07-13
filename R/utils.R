@@ -1,4 +1,7 @@
 # Miscellaneous Helpers -----------------------------------------------
+
+rm(list = ls())
+mgalda::hfrec_libraries()
 append_infer_class <- function(x) {
   x_cl <- class(x)
   if (x_cl[1] != "infer") {
@@ -34,6 +37,11 @@ get_par_levels <- function(x) {
   gsub("^.\\.", "", par_names)
 }
 
+
+
+
+
+
 copy_attrs <- function(to, from,
                        attrs = c(
                          "response", "success", "explanatory", "response_type",
@@ -68,6 +76,10 @@ reorder_explanatory <- function(x, order) {
   )
   x
 }
+
+calculate(x = x,
+
+mgalda::hfrec_libraries()
 
 # Getters, setters, and indicators ------------------------------------------
 explanatory_expr <- function(x) {
@@ -536,7 +548,8 @@ check_mlr_x_and_obs_stat <- function(x, obs_stat, fn, arg) {
 #'   either `is.` or `is_`. In case of a doubt supply `type_name` explicitly.
 #' @param x_name String to be used as variable name instead of supplied one
 #'   (default).
-#' @param allow_null If `TRUE` then error isn't thrown if `x` is `NULL`, no
+#' @param allow_null If `TRUE` then error isn't thrown if `x` i
+#' s `NULL`, no
 #'   matter what `predicate(x)` returns.
 #' @param ... Arguments to be passed to `predicate`.
 #'
@@ -579,6 +592,8 @@ check_type <- function(x, predicate, type_name = NULL, x_name = NULL,
 }
 
 # This function is needed because `typeof()` on data frame returns "list"
+
+
 get_type <- function(x) {
   if (is.data.frame(x)) {
     return("data.frame")
@@ -599,3 +614,4 @@ parse_type <- function(f_name) {
 
   res
 }
+
